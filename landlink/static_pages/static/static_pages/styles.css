@@ -1,0 +1,15 @@
+.header {
+    background-color: blue;
+    color: white;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 70vh !important;
+    object-fit: cover;
+}
