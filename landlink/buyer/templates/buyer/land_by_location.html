@@ -1,19 +1,53 @@
-<!-- buyer/templates/buyer/land_by_location.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ location.name }}</title>
-</head>
-<body>
-    <h1>{{ location.name }}</h1>
+{% extends 'static_pages/base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ location.name }} - LandLink
+{% endblock %}
+
+{% block navbar_links %}
+<li class="nav-item">
+    <a class="nav-link" href="#" style="color: white; text-transform: uppercase; font-size: 1.5rem;">Dashboard</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#" style="color: white; text-transform: uppercase; font-size: 1.5rem;">Chat</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#" style="color: white; text-transform: uppercase; font-size: 1.5rem;">Profile</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="width: 90%;">
+    <h1 class="mt-5 text-center">{{ location.name }}</h1>
     
-    <h2>Listings in this Location</h2>
-    <ul>
-        {% for listing in listings %}
-            <li>{{ listing.title }} - {{ listing.price }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+    <div class="mt-5">
+        <h2>Listings in this Location</h2>
+        <div class="row">
+            {% for listing in listings %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ listing.image.url }}" class="card-img-top" alt="{{ listing.title }}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ listing.title }}</h5>
+                            <p class="card-text">${{ listing.price }}</p>
+                            <a href="#" class="btn btn-primary mt-auto">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer bg-dark text-white py-3">
+    <div class="container text-center">
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <p>&copy; 2024 LandLink</p>
+    </div>
+</footer>
+{% endblock %}
