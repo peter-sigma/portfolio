@@ -2,7 +2,7 @@
 # seller/views.py
 from django.shortcuts import render, redirect
 from .forms import LandListingForm
-from .models import LandListing
+from .models import LandListing, Location
 
 def upload_land(request):
     if request.method == 'POST':

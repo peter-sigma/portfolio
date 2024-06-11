@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models import Location, LandListing
+from seller.models import Location, LandListing
 
 def dashboard(request):
     locations = Location.objects.all()

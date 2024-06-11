@@ -1,17 +1,60 @@
-<!-- seller/templates/seller/upload_land.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Land Listing</title>
-</head>
-<body>
-    <h1>Upload Land Listing</h1>
-    <form method="post" enctype="multipart/form-data">
+{% extends 'static_pages/base.html' %}
+{% load static %}
+
+{% block title %}
+    Upload Land Listing - LandLink
+{% endblock %}
+{% block navbar_links %}
+    <li>link</li>
+{% endblock %}
+{% block content %}
+<div class="container" style="width: 90%;">
+    <h1 class="mt-5 text-center">Upload Land Listing</h1>
+    <form method="post" enctype="multipart/form-data" class="mt-4">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <div class="form-group row">
+            <label for="{{ form.title.id_for_label }}" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+                {{ form.title }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="{{ form.location.id_for_label }}" class="col-sm-2 col-form-label">Select Location</label>
+            <div class="col-sm-10">
+                {{ form.location }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="{{ form.description.id_for_label }}" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                {{ form.description }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="{{ form.price.id_for_label }}" class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-10">
+                {{ form.price }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="{{ form.image.id_for_label }}" class="col-sm-2 col-form-label">Choose Image</label>
+            <div class="col-sm-10">
+                {{ form.image }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
     </form>
-</body>
-</html>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer bg-dark text-white py-3">
+    <div class="container text-center">
+        <p>&copy; 2024 LandLink</p>
+    </div>
+</footer>
+{% endblock %}
