@@ -9,6 +9,9 @@
     background-color: rgba(0, 0, 255, 0.856) !important;
     color: rgb(5, 106, 201);
 }
+.card:hover {
+    box-shadow: 0 4px 8px rgba(37, 1, 243);
+}
 .dropdown-menu:hover {
     background-color: rgb(105, 192, 221) !important;
 }

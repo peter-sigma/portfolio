@@ -13,3 +13,6 @@ def upload_land(request):
     else:
         form = LandListingForm()
     return render(request, 'seller/upload_land.html', {'form': form})
+
+
+    
