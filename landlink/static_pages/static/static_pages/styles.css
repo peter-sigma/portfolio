@@ -2,6 +2,16 @@
     background-color: blue;
     color: white;
 }
+.navbar {
+    background-color: blue; /* Change the background color to blue */
+}
+.bg-blue {
+    background-color: blue !important;
+    color: rgb(5, 106, 201);
+}
+.dropdown-menu:hover {
+    background-color: rgb(105, 192, 221) !important;
+}
 
 .footer {
     background-color: black;
