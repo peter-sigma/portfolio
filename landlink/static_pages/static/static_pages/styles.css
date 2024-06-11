@@ -6,7 +6,7 @@
     background-color: blue; /* Change the background color to blue */
 }
 .bg-blue {
-    background-color: blue !important;
+    background-color: rgba(0, 0, 255, 0.856) !important;
     color: rgb(5, 106, 201);
 }
 .dropdown-menu:hover {
